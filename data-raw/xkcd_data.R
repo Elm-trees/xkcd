@@ -1,5 +1,3 @@
-## code to prepare `xkcd_data` dataset goes here
-
 # Can use library() here because this is ignored when package is built. As far as users are
 # concerned, this doesn't exist, so it won't mess with their search path. Can treat the files in
 # /data-raw as own personal R scripts.
@@ -14,7 +12,7 @@ for (i in 1:10) {
   Sys.sleep(1)
 }
 
-xkcd <- do.call(rbind, json_objects)
-xkcd <- as.data.frame(xkcd)
+xkcd_data <- do.call(rbind, json_objects)
+xkcd_data <- as.data.frame(xkcd_data)
 
 usethis::use_data(xkcd_data, overwrite = TRUE)
